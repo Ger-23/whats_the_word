@@ -30,12 +30,19 @@ def dashed_word_rep(word, guessed_letters):
             dashed_word.append('_')
 
     print(' '.join(dashed_word))
+
+
+
+
+def wtw():
     
-test_word = "HOUSE"
-guessed_letters = ["O", "E"]
-print(test_word, guessed_letters)
-dashed_word_rep(test_word, guessed_letters)
+    print("Welcome to What's The Word!")
 
-#def wtw():
+    current_word = choose_word()
+    guessed_letters = []
 
-#wtw()
+    print(current_word)
+    dashed_word_rep(current_word, guessed_letters)
+    
+    
+wtw()
