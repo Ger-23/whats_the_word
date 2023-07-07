@@ -92,6 +92,7 @@ while True:
             print("Congratulations! You've guessed the word! Well done!")
             break
 
+    print("The word you were looking for is",current_word)        
     play_again = input("Would you like to have another go? (y/n?): \n")
     if play_again.lower() != 'y':
         break
