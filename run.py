@@ -29,20 +29,50 @@ def dashed_word_rep(word, guessed_letters):
         else:
             dashed_word.append('_')
 
-    print(' '.join(dashed_word))
+    return(' '.join(dashed_word))
 
 
 
 
 def wtw():
+    """
+    implement game logic. Prompt player to enter guess, check if correct, incorrect or repeat guess, and update guessed letters and lives left.
+    """
     
     print("Welcome to What's The Word!")
 
     current_word = choose_word()
     guessed_letters = []
+    lives_left = MAX_LIVES
 
     print(current_word)
     dashed_word_rep(current_word, guessed_letters)
     
-    
+    while True:
+        guess = input("Guess a letter:\n").upper()
+
+        if guess in guessed_letters:
+            print("You've already guessed that one!")
+            continue
+
+        guessed_letters.append(guess)
+
+        if guess in current_word:
+            print("Correct guess!")
+        else:
+            lives_left -= 1
+            print("Incorrect guess!")
+            print("Lives left: ", lives_left)
+
+        print("Guessed letters: ", guessed_letters)
+        dashed_word_rep(current_word, guessed_letters)
+
+        if lives_left == 0:
+            print("No lives left! Better luck next time!")
+            break
+
+        if '_' not in dashed_word_rep(current_word, guessed_letters):
+            print("Congratulations! You've guessed the word! Well done!")
+            break
+
 wtw()
