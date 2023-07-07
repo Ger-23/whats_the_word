@@ -1,11 +1,24 @@
 import random
 
 WORD_LIST = [
-    "Homer",
-    "Apu",
-    "Smithers",
-    "Flanders",
-    "Barney"
+    "HOMER",
+    "APU",
+    "SMITHERS",
+    "FLANDERS",
+    "BARNEY",
+    "MARGE",
+    "MAGGIE",
+    "LISA",
+    "BART",
+    "MOE",
+    "MRBURNS",
+    "MAUDE",
+    "PATTY",
+    "SELMA",
+    "GRANDPA",
+    "LENNY",
+    "CARL",
+    "DUFFMAN"
 ]
 
 MAX_LIVES = 5
@@ -28,9 +41,8 @@ def dashed_word_rep(word, guessed_letters):
             dashed_word.append(letter)
         else:
             dashed_word.append('_')
-
+    
     return(' '.join(dashed_word))
-
 
 
 
@@ -40,13 +52,18 @@ def wtw():
     """
     
     print("Welcome to What's The Word!")
+    print("The object of the game is to guess the letters to reveal the hidden word.\nYou have a total of 5 lives.\nGood luck!")
+    print("Theme is characters from The Simpsons")
 
+while True:
+
+    wtw()
     current_word = choose_word()
     guessed_letters = []
     lives_left = MAX_LIVES
 
-    print(current_word)
-    dashed_word_rep(current_word, guessed_letters)
+    
+    print(dashed_word_rep(current_word, guessed_letters))
     
     while True:
         guess = input("Guess a letter:\n").upper()
@@ -64,8 +81,8 @@ def wtw():
             print("Incorrect guess!")
             print("Lives left: ", lives_left)
 
-        print("Guessed letters: ", guessed_letters)
-        dashed_word_rep(current_word, guessed_letters)
+        dashed_word = dashed_word_rep(current_word, guessed_letters)
+        print(dashed_word)
 
         if lives_left == 0:
             print("No lives left! Better luck next time!")
@@ -75,4 +92,7 @@ def wtw():
             print("Congratulations! You've guessed the word! Well done!")
             break
 
-wtw()
+    play_again = input("Would you like to have another go? (y/n?): \n")
+    if play_again.lower() != 'y':
+        break
+
