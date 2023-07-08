@@ -1,31 +1,96 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# What's The Word!
 
-Welcome USER_NAME,
+What's The Word is a Python terminal game, which runs in the Code Institute mock terminal on Heroku.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+Users try to guess the letters in order to reveal the hidden word before all of their five lives run out.
 
-## Reminders
+[Click here to go to my live project](https://whats-the-word-e1699aaf9ca6.herokuapp.com/)
+![Screenshot of app on different size displays](images/Heroku-P3-Responsiveness.png)
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## How To Play
 
-## Creating the Heroku app
+When game loads player is prompted to is greeted with a message and is given a hint before being prompted to make a guess at the first letter.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+Player inputs guess and is told informed that they are successful or unsuccessful or that the guess has been made already.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+This continues until the word is revealed or the player has used up all five lives.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+When the game ends the player is given the option to play again by entering "y" for yes or "n" for no.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+## Features
 
-Connect your GitHub repository and deploy as normal.
+### Existing Features
 
-## Constraints
+- Randomly selects a word from a predined list of characters from The Simpsons.
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+- Displays a dashed representation of the chosen word with underscores representing unguessed letters.
 
------
-Happy coding!
+- Allows the player to guess a letter.
+
+- Checks if the guess is correct, incorrect or a repeat guess.
+
+- Updates the guessed letters and number of lives left.
+
+- Provides feedback on the guess and the remaining lives.
+
+- Continues the game until the player runs out of lives or guesses the word.
+
+- Prompts player to decide whether to play again or not whenthe game is finished.
+
+### Future Features
+
+- Expanded lists and categories or themes.
+
+- A scoring system and leaderboard.
+
+## Data Structure
+
+- _WORD_LIST_: This is a list that contains the words (characters from The Simpsons) that the game randomly selects. The words are stored as strings.
+
+- _guessed_letters_: It is a list that keeps track of all of the guessed letters. It is used to check if a letter has already been guessed and to update the dashed representation of the word.
+
+- _current_word_: A string that represents the randomly chosen word for the current game session. It is selected from the WORD_LIST using random selection.
+
+- _dashed_word_: A string that is created by the _dashed_word_rep_ function to display the current state of the word being guessed, with dashes representing unguessed letters.
+
+Overall the data model in the game is relatively simple, primarily consisting of lists and strings to store and manipulate the words, guessed letters and dashed representation of the words.
+
+## Testing
+
+I have manually tested the project by doing the following:
+
+ - Passed the code through a PEP8 Python Validator.
+
+ - Given duplicate input to receive feedback pointing this out.
+
+ - Tested in my local terminal and the Code Institute Heroku terminal.
+
+ ## Bugs
+
+ There are no bugs in the code.
+
+ ## Validator Testing
+
+ Tested through Code Institute Python Linter - all clear, no errors found.
+
+ ## Deployment
+
+  - Steps for deployment:
+
+     - Clone repository.
+
+     - Create a new Heroku app.
+
+     - Set the _Buildpacks_ to Python and _nodeJS_.
+
+     - Set _key_ to PORT and _value_ to 8000.
+
+     - Link Heroku app to Github repository.
+
+     - Deploy
+
+## Credits
+
+ - Code Institute for Heroku terminal.
+
+ - Mentor for guidance with the code.
