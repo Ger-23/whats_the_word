@@ -23,11 +23,12 @@ WORD_LIST = [
 
 MAX_LIVES = 5
 
+
 def choose_word():
     """
-    Choose random word from word list and returns a word from said list, in all caps.
+    Choose random word from word list and returns a word, in all caps.
     """
-    random_word_index = random.randint(0, len(WORD_LIST) -1)
+    random_word_index = random.randint(0, len(WORD_LIST) - 1)
     return WORD_LIST[random_word_index].upper()
 
 
@@ -41,30 +42,31 @@ def dashed_word_rep(word, guessed_letters):
             dashed_word.append(letter)
         else:
             dashed_word.append('_')
-    
-    return(' '.join(dashed_word))
 
+    return (' '.join(dashed_word))
 
 
 def wtw():
     """
-    implement game logic. Prompt player to enter guess, check if correct, incorrect or repeat guess, and update guessed letters and lives left.
+    Implement game logic.
+    Prompt player to enter guess.
+    Check if correct, incorrect or repeat guess.
+    Update guessed letters and number of lives left.
     """
-    
+
     print("Welcome to What's The Word!")
-    print("The object of the game is to guess the letters to reveal the hidden word.\nYou have a total of 5 lives.\nGood luck!")
-    print("Theme is characters from The Simpsons")
+    print("The object of the game is to guess the letters to reveal the word.")
+    print("You have a total of 5 lives. Good luck!\n(hint: The Simpsons)")
+
 
 while True:
-
     wtw()
     current_word = choose_word()
     guessed_letters = []
     lives_left = MAX_LIVES
 
-    
     print(dashed_word_rep(current_word, guessed_letters))
-    
+
     while True:
         guess = input("Guess a letter:\n").upper()
 
@@ -92,8 +94,7 @@ while True:
             print("Congratulations! You've guessed the word! Well done!")
             break
 
-    print("The word you were looking for is",current_word)        
+    print("The word you were looking for is", current_word)
     play_again = input("Would you like to have another go? (y/n?): \n")
     if play_again.lower() != 'y':
         break
-
