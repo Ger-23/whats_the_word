@@ -27,15 +27,23 @@ When the game ends the player is given the option to play again by entering "y" 
 
 - Allows the player to guess a letter.
 
+![Screenshot of game showing intro screen](images/Shot-of-game1-1_1.jpg)
+
 - Checks if the guess is correct, incorrect or a repeat guess.
 
 - Updates the guessed letters and number of lives left.
 
 - Provides feedback on the guess and the remaining lives.
 
+![Screenshot of game showing incorrect guess, correct and already guessed, and feedback](images/Shot-of-game2_1.jpg)
+
 - Continues the game until the player runs out of lives or guesses the word.
 
+- Hidden word revealed if player does not guess correctly.
+
 - Prompts player to decide whether to play again or not whenthe game is finished.
+
+![Screenshot of game showing restart prompt](images/Shot-of-game3_1.jpg)
 
 ### Future Features
 
@@ -53,7 +61,7 @@ When the game ends the player is given the option to play again by entering "y" 
 
 - _dashed_word_: A string that is created by the _dashed_word_rep_ function to display the current state of the word being guessed, with dashes representing unguessed letters.
 
-Overall the data model in the game is relatively simple, primarily consisting of lists and strings to store and manipulate the words, guessed letters and dashed representation of the words.
+Overall the data model in the game is primarily consisting of lists and strings to store and manipulate the words, guessed letters and dashed representation of the words.
 
 ## Testing
 
@@ -72,6 +80,8 @@ I have manually tested the project by doing the following:
  ## Validator Testing
 
  Tested through Code Institute Python Linter - all clear, no errors found.
+
+ ![Screenshot of validator test result showing no errors](images/CI_Python_Linter.jpg)
 
  ## Deployment
 
@@ -93,4 +103,6 @@ I have manually tested the project by doing the following:
 
  - Code Institute for Heroku terminal.
 
- - Mentor for guidance with the code.
+ - Mentor for guidance with structure and code.
+
+ - Google and WC3 Schools with code.
