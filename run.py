@@ -1,4 +1,4 @@
-import random
+import random, sys
 
 WORD_LIST = [
     "HOMER",
@@ -59,7 +59,7 @@ def wtw():
     print("You have a total of 5 lives. Good luck!\n(hint: The Simpsons)")
 
 
-while True:
+if __name__ == '__main__':
     wtw()
     current_word = choose_word()
     guessed_letters = []
@@ -97,4 +97,7 @@ while True:
     print("The word you were looking for is", current_word)
     play_again = input("Would you like to have another go? (y/n?): \n")
     if play_again.lower() != 'y':
-        break
+        sys.exit()
+
+if __name__ == '__main__':
+    wtw()

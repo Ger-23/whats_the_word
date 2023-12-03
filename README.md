@@ -67,6 +67,32 @@ Overall the data model in the game is primarily consisting of lists and strings 
 
 I have manually tested the project by doing the following:
 
+### Test Choose_Word:
+
+- Red Refactor: Tested for individual word from WORD_LIST but as function chooses a random word from the list the test failed.
+
+- Green Refactor: Changed the individual name selected from the WORD_LIST and instead supplied the variable WORD_LIST. Test passed.
+
+![Screenshot of test_choose_word](images/test_choose_word.jpg)
+
+### Test Dashed_Word_Rep:
+
+- Red Refactor: Tested with incorrect inputs for chosen word and test failed.
+
+- Green Refactor: Changed to correct inputs and both correct inputs were displayed alongside dashed representations of the yet to be guessed letters.
+
+
+![Screenshot of test_dashed_word_rep](images/test_dashed_word_rep.jpg)
+
+### Test WTW:
+
+- Red Refactor: Tested to see if 2 print statements were called when fucntion was executed. Test failed as there is 3 print statements.
+
+- Green Refactor: Tested with correct number of print statements. Test passed.
+
+
+![Screenshot of test_wtw](images/test_wtw.jpg)
+
  - Passed the code through a PEP8 Python Validator.
 
  - Given duplicate input to receive feedback pointing this out.
