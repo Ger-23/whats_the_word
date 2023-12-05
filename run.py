@@ -1,4 +1,8 @@
-import random, sys
+"""
+Contains imlementation of What's The Word Game.
+"""
+import random
+import sys
 
 WORD_LIST = [
     "HOMER",
@@ -43,7 +47,7 @@ def dashed_word_rep(word, guessed_letters):
         else:
             dashed_word.append('_')
 
-    return (' '.join(dashed_word))
+    return ' '.join(dashed_word)
 
 
 def wtw():
@@ -60,47 +64,50 @@ def wtw():
 
 
 if __name__ == '__main__':
-    wtw()
-    current_word = choose_word()
-    guessed_letters = []
-    lives_left = MAX_LIVES
-
-    print(dashed_word_rep(current_word, guessed_letters))
-
     while True:
-        guess = input("Guess a letter:\n").upper()
+        wtw()
+        current_word = choose_word()
+        guessed_letters = []
+        lives_left = MAX_LIVES
 
-        if not guess.isalpha() or len(guess) != 1:
-            print("Please enter a single letter guess")
-            continue
+        print(dashed_word_rep(current_word, guessed_letters))
 
-        if guess in guessed_letters:
-            print("You've already guessed that one!")
-            continue
+        while True:
+            guess = input("Guess a letter:\n").upper()
 
-        guessed_letters.append(guess)
+            if not guess.isalpha() or len(guess) != 1:
+                print("Please enter a single letter guess")
+                continue
 
-        if guess in current_word:
-            print("Correct guess!")
-        else:
-            lives_left -= 1
-            print("Incorrect guess!")
-            print("Lives left: ", lives_left)
+            if guess in guessed_letters:
+                print("You've already guessed that one!")
+                continue
 
-        dashed_word = dashed_word_rep(current_word, guessed_letters)
-        print(dashed_word)
+            guessed_letters.append(guess)
 
-        if lives_left == 0:
-            print("No lives left! Better luck next time!")
+            if guess in current_word:
+                print("Correct guess!")
+            else:
+                lives_left -= 1
+                print("Incorrect guess!")
+                print("Lives left: ", lives_left)
+
+            dashed_word = dashed_word_rep(current_word, guessed_letters)
+            print(dashed_word)
+
+            if lives_left == 0:
+                print("No lives left! Better luck next time!")
+                break
+
+            if '_' not in dashed_word_rep(current_word, guessed_letters):
+                print("Congratulations! You've guessed the word! Well done!")
+                break
+
+        print("The word you were looking for is", current_word)
+        play_again = input("Would you like to have another go? (y/n?): \n")
+        if play_again.lower() == 'y':
             break
 
-        if '_' not in dashed_word_rep(current_word, guessed_letters):
-            print("Congratulations! You've guessed the word! Well done!")
-            break
-
-    print("The word you were looking for is", current_word)
-    play_again = input("Would you like to have another go? (y/n?): \n")
-    if play_again.lower() != 'y':
         sys.exit()
 
 if __name__ == '__main__':

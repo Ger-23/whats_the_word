@@ -37,6 +37,9 @@ When the game ends the player is given the option to play again by entering "y" 
 
 ![Screenshot of game showing incorrect guess, correct and already guessed, and feedback](images/Shot-of-game2_1.jpg)
 
+![Screenshot of game showing multiple character and numerical guesses with feedback](images/Shot-of-game4_1.jpg)
+
+
 - Continues the game until the player runs out of lives or guesses the word.
 
 - Hidden word revealed if player does not guess correctly.
@@ -65,7 +68,7 @@ Overall the data model in the game is primarily consisting of lists and strings 
 
 ## Testing
 
-I have manually tested the project by doing the following:
+I have manually tested the project by running the following tests:
 
 ### Test Choose_Word:
 
@@ -101,14 +104,20 @@ I have manually tested the project by doing the following:
 
  ## Bugs
 
- There are no bugs in the code.
+- If more than one character or numbers were entered it caused the function to break - fixed with if statement which prompts the appropriate action if the guess is not a letter or is longer than one character.
+
+ ![Screenshot of bug fix code](images/bug_if_statement.jpg)
+
+ - Game did not restart on pressing 'y' when prompted at the of a game - corrected with outer while True loop.
+
+ ![Screenshot of bug fix code](images/while_true.jpg)
 
  ## Validator Testing
 
  Tested through Code Institute Python Linter - all clear, no errors found.
 
  ![Screenshot of validator test result showing no errors](images/CI_Python_Linter.jpg)
-
+ 
  ## Deployment
 
   - Steps for deployment:
@@ -121,9 +130,11 @@ I have manually tested the project by doing the following:
 
      - Set _key_ to PORT and _value_ to 8000.
 
-     - Link Heroku app to Github repository.
+     - Link Heroku app to Github repository in Deploy section.
 
-     - Deploy
+     - Click Deploy Branch.
+
+     - When build complete and successful click Open App.
 
 ## Credits
 
