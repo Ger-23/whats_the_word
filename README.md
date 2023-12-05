@@ -37,6 +37,8 @@ When the game ends the player is given the option to play again by entering "y" 
 
 ![Screenshot of game showing incorrect guess, correct and already guessed, and feedback](images/Shot-of-game2_1.jpg)
 
+- Checks if the guess is a number or more than one character and provides feedback.
+
 ![Screenshot of game showing multiple character and numerical guesses with feedback](images/Shot-of-game4_1.jpg)
 
 
@@ -117,6 +119,8 @@ I have manually tested the project by running the following tests:
  Tested through Code Institute Python Linter - all clear, no errors found.
 
  ![Screenshot of validator test result showing no errors](images/CI_Python_Linter.jpg)
+
+ Responsiveness tested on https://ui.dev/amiresponsive (image displayed under live project link above) - looks good on different screens.
  
  ## Deployment
 
@@ -124,15 +128,21 @@ I have manually tested the project by running the following tests:
 
      - Clone repository.
 
-     - Create a new Heroku app.
+     - Create a new Heroku app by clicking New App.
 
-     - Set the _Buildpacks_ to Python and _nodeJS_.
+     - Create app name and set region to Europe then click Create App.
 
-     - Set _key_ to PORT and _value_ to 8000.
+     - In the app then go to settings and look at Reveal Config Vars.
+     
+     - There set _key_ to PORT and _value_ to 8000.
 
-     - Link Heroku app to Github repository in Deploy section.
+     - Then Add Buildpacks and select Python and NodeJS.
 
-     - Click Deploy Branch.
+     - Next go to the Deploy Method in Deployment section and select Github.
+
+     - Below this search for What's The Word and click connect to link app to code.
+
+     - Lastly click Deploy Branch and wait for "App was deployed successully" message.
 
      - When build complete and successful click Open App.
 
