@@ -70,6 +70,10 @@ if __name__ == '__main__':
     while True:
         guess = input("Guess a letter:\n").upper()
 
+        if not guess.isalpha() or len(guess) != 1:
+            print("Please enter a single letter guess")
+            continue
+
         if guess in guessed_letters:
             print("You've already guessed that one!")
             continue
