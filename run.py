@@ -105,10 +105,8 @@ if __name__ == '__main__':
 
         print("The word you were looking for is", current_word)
         play_again = input("Would you like to have another go? (y/n?): \n")
-        if play_again.lower() == 'y':
-            break
-
-        sys.exit()
+        if play_again.lower() != 'y':
+            sys.exit()
 
 if __name__ == '__main__':
     wtw()
